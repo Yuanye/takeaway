@@ -1,0 +1,9 @@
+rm -rf build
+rm -rf dist
+rm -rf takeaway.egg-info
+python setup.py clean
+python setup.py build
+python setup.py install
+rm -rf build
+rm -rf dist
+rm -rf takeaway.egg-info

@@ -55,3 +55,15 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#
+*.woff
+*.woff2
+*.ttf
+*.eot
+*.svg
+
+bundle.js
+node_modules
+
+.DS_Store
