@@ -1,5 +1,6 @@
 var React = require('react');
 var CartActions = require('../actions/CartActions');
+var TakeawayConstants = require('../constants/TakeawayConstants');
 
 var Food = React.createClass({
 	propTypes: {
@@ -20,33 +21,51 @@ var Food = React.createClass({
 	},
 
 	render: function() {
+		var CART_URL = TakeawayConstants.WEB_URI+"#/carts"
 		var food = this.props.data;
-		console.log(this.state.amount);
 		var amount = this.state.amount;
-
+		var AddAmountStyle = {width: "25px", float: "right"};
 		if (amount > 0 ) {
-			var reduceAmountStyle = {};
-			var AmountStyle = {}
+			var reduceAmountStyle = {width: "25px",float: "left"};
+			var CartStyle = {width: "70px",float: "right"};
+			var AmountStyle = {width: "20px", float: "left", margin: "2px 0 0 1px"};
+
 		} else {
 			var reduceAmountStyle = {display: "none"};
+			var CartStyle = {display: "none"};
 			var AmountStyle = {display: "none"};
 		}
 
 		return (
 			<div className="food">
-				{food.id}
-				{food.name}		
-				{food.price}		
-				{food.createdAt}
-				<img src={food.cover} alt="" />		
-
-				<div className="choose-amount">
-					<button onClick={this.reduceAmount} style={reduceAmountStyle}>-</button>
-					<div style={AmountStyle}>
-						{this.state.amount}
-					</div>
-					<button onClick={this.addAmount}>+</button>
+				<div className="cover">
+					<img  src={food.cover} alt="" />
 				</div>
+				<div className="intro">
+					{food.name}	
+				</div>
+				<div className="sale-info"> 
+					月销售{food.records} 份 
+					<div style={CartStyle}>
+						<a href={CART_URL}>去购物车</a>
+					</div>
+				</div>	
+				<div className="buy">
+					<div className="price">¥{food.price}/份</div>
+					<div className="choose-amount">
+						<div style={reduceAmountStyle}>
+							<button onClick={this.reduceAmount} >-</button>
+						</div>
+						<div style={AmountStyle}>
+							{this.state.amount}
+						</div>
+						<div style={AddAmountStyle}>
+							<button onClick={this.addAmount} >+</button>
+						</div>
+						
+					</div>
+				</div>
+
 			</div>
 		);
 	},

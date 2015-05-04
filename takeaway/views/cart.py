@@ -42,6 +42,7 @@ class CartHandler(APIHandler):
             else:
                 cart = CartDAO(**arguments)
                 cart.created_at = now
+            cart.has_ordered = 0
             cart.updated_at = now
             try:
                 cart = cart.add(self.db_session).to_dict()

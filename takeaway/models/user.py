@@ -32,7 +32,6 @@ class UserDAO(BaseModel):
     def add(self, session): 
         try:
             self._commit(session, self)
-            self.session_id = generate_token(32)
             return self 
         except Exception as e:
             session.rollback()
@@ -53,7 +52,6 @@ class UserDAO(BaseModel):
 
     @hybrid_method
     def by_session_id(cls, session, session_id):
-        print(session_id)
         user = session.query(cls).filter(cls.session_id == session_id).scalar()
         if not user:  
             raise UserNotExists

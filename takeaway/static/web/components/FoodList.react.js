@@ -26,9 +26,10 @@ var FoodList = React.createClass({
 	render: function() {
 		return (
 
-			<div>
-				<div>
-					<li>
+			<div className="wrap ">
+				<div className="col-sm-1 sidebar">
+				  <ul className="nav nav-sidebar">
+				  	<li>
 					 	<a href="#/categories/latest">最新</a>
 					</li>
 					<li>
@@ -38,11 +39,13 @@ var FoodList = React.createClass({
 						return <Category key={'cid_' + result.id} data={result} /> 
 						})
 					} 
+				  </ul>
+					
 				</div>
-				<div>
+				<div className="col-sm-11 foods">
 					<ul>
 						{this.state.foods.map(function(result){
-							return <Food key={'fid_' + result.id} data={result} />
+							return <li > <Food key={'fid_' + result.id} data={result} /></li>
 						})}
 					</ul>
 				</div>

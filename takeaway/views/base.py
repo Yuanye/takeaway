@@ -55,6 +55,7 @@ class BaseHandler(tornado.web.RequestHandler):
         user = self.user_id_by_cookie()
         if user:
             return user 
+        self.clear_cookie('S')
         return None
 
     @property
@@ -91,7 +92,7 @@ class MinimalHanlder(BaseHandler):
         self.set_cookie('S', session, domain=DOMAIN)
 
     def logout(self, user):
-        self.clear_cookie('S')
+        self.clear_cookie('S', domain=DOMAIN)
 
     def form_error(self, name, msg):
         self._form_errors[name] = msg
@@ -177,13 +178,13 @@ class APIHandler(MinimalHanlder):
         access_token = user.session_id
         self.set_cookie('S', access_token, domain=DOMAIN)
         self.set_header('Authorization', 'Bearer ' + access_token)
-        self._data["name"] = user.name
         self._data["access_token"] = access_token
         self.make_response()
         return 
 
     def logout(self, user):
         self.set_header('Authorization', 'Bearer ')
+        self.clear_cookie('S', domain=DOMAIN)
         self.make_response()
         return 
 

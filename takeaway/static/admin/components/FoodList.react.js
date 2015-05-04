@@ -19,13 +19,13 @@ var FoodList = React.createClass({
 
 	render: function() {
 		return (
-
-			<ul>
-				{this.state.foods.map(function(result){
-					return <Food key={'fid_' + result.id} data={result} />
-				})}
-			</ul>
-
+			<div className="col-sm-11 foods">
+				<ul>
+					{this.state.foods.map(function(result){
+						return <li > <Food key={'fid_' + result.id} data={result} /></li>
+					})}
+				</ul>
+			</div>
 		);
 	},
 	_onChange: function() {

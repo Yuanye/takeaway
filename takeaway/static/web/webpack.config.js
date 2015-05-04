@@ -7,7 +7,7 @@ module.exports = {
     module: {
   		loaders: [
     		{ test: /\.jsx?$/, loaders: ['jsx-loader', 'jsx?harmony'] },
-        { test: /\.css$/, loader: "style!css" },
+        { test: /\.css$/, loader: "style-loader!css-loader" },
         { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
         { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },
         { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&minetype=application/font-woff" },

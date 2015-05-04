@@ -1,0 +1,49 @@
+.order {
+  display: block;
+  min-height: 170px;
+  margin: 0 0 10px;
+  padding: 5px 0;
+  border-top: 0;
+}
+.order .detail {
+	float: right;
+  width:50%;
+}
+
+
+.order .goods{
+  float: left;
+  width: 50%;
+}
+
+.order .img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #eee;
+  margin-right: 10px;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.goods .img {
+  float: left;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #eee;
+  margin-right: 10px;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+.food-name {
+  width: 140px;
+}
+.food-price {
+  width: 145px;
+}
+.food-amount {
+  width: 120px;
+}
+.order_detail_msg{margin-left: 30px;}

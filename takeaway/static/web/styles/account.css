@@ -1,0 +1,24 @@
+.login-form {
+	margin: 0 auto;
+	width: 300px;
+}
+.login-form span {
+	width: 100px;
+}
+.login-form .login-password input {
+	margin-left: 13px;
+}
+
+.signup-form {
+	margin: 0 auto;
+	width: 300px;
+}
+.signup-form span {
+	width: 100px;
+}
+.signup-form .signup-phone_num input {
+	margin-left: 13px;
+}
+.signup-form .signup-password input {
+	margin-left: 13px;
+}

@@ -1,6 +1,6 @@
 
 module.exports = {
-  API_URI: "http://127.0.0.1:8000/",
+  API_URI: "http://test.com/",
   CATEGORY_CREATE: "CATEGORY_CREATE",
   CATEGORY_DELETE: "CATEGORY_DELETE",
   CATEGORY_GET: "CATEGORY_GET",

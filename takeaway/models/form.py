@@ -58,8 +58,11 @@ class CartForm(Form):
     next = HiddenField()
     submit = SubmitField("Save")
 
-class Order(Form):
-    pass
+class OrderForm(Form):
+    cart_ids = TextField("CartIds", validators=[required(message="Cart ids required")])
+    phone_num = TextField("PhoneNum", validators=[required(message="Phone Num required")])
+    address = TextField("Address", validators=[required(message="Address required")])
+    submit = SubmitField("Save")
 
 if __name__ == "__main__":
     pass

@@ -18,8 +18,7 @@ class OrderNotExists(Exception):
 
 ORDER_STATE = {
     "created": 10,
-    "pre-delivery": 20,
-    "in-delivery": 30,
+    "delivery": 20,
     "finished": 40,
     "cancel": -1 
 }
@@ -30,6 +29,9 @@ class OrderDAO(BaseModel):
     id = Column(Integer, primary_key=True) 
     user_id = Column(Integer)
     total = Column(DECIMAL(5, 2))
+    consignee = Column(String)
+    phone_num = Column(String)
+    address = Column(String)
     state = Column(TINYINT)
     created_at = Column(TIMESTAMP(timezone=False), nullable=False, server_default=func.current_timestamp())
 
@@ -78,6 +80,7 @@ class OrderDetailDAO(BaseModel):
     food_id = Column(Integer)
     amount = Column(Integer)
     price = Column(DECIMAL(5, 2))
+    created_at = Column(TIMESTAMP(timezone=False), nullable=False, server_default=func.current_timestamp())
 
     @hybrid_method
     def add(self, session): 

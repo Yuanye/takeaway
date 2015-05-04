@@ -1,0 +1,75 @@
+.navbar {
+  margin-bottom: 20px;
+}
+.sidebar {
+	padding: 0;
+}
+.nav .nav-sidebar a {
+	padding-left: 5px;
+}
+
+.vertical-line {
+  font-size: 18px;
+  color: #dcdcdc;
+}
+
+.container {
+  width: 980px;
+  margin: auto;
+}
+
+.foods li {
+	list-style: none;
+	padding-right: 0px;
+}
+.foods ul {
+	padding: 0;
+}
+.food {
+  float: left;
+  width: 210px;
+  height: 300px;
+  border-right: 1px dashed #DDDDDD;
+  border-bottom: 1px dashed #DDDDDD;
+  padding-right: 1px;
+}
+
+.food .cover {
+	width: 190px;
+	margin: 8px auto 0;
+}
+.food .cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.food .intro {
+	width: 190px;
+	margin: 14px auto 0;
+}
+.food .labels {
+	width: 190px;
+	margin: 8px auto 0;
+}
+.food .sale-info {
+	width: 190px;
+	margin: 8px auto 0;
+}
+.food .buy {
+	width: 190px;
+	margin: 8px auto 0;
+
+}
+.food .price {
+	float: left;
+	width: 97px;
+}
+.food .choose-amount{
+	float: right;
+	width: 72px;
+}
+.food .choose-amount button {
+	width: 25px;
+}

@@ -1,0 +1,101 @@
+.cart-main {
+
+}
+
+.column {
+
+}
+
+.cart {
+  display: block;
+  height: 70px;
+  margin: 0 0 10px;
+  padding: 5px 0;
+  border-top: 0;
+}
+.cart-thead {
+	height: 30px;
+}
+
+.column {
+  float: left;
+}
+
+.t-checkbox {
+  float: left;
+  width: 60px;
+
+}
+
+.t-goods{
+  float: left;
+  width: 180px;
+}
+
+.t-price {
+	float: left;
+	width: 100px;
+
+}
+.t-quantity {
+	float: right;
+	width: 100px;
+}
+
+.p-img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #eee;
+  margin-right: 10px;
+  background: #fff;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cart-detail {
+  margin: 0 0 10px;
+  padding: 5px 0;
+  border-top: 0;
+}
+.cart-user-info {
+  margin: 0 0 10px;
+  padding:  0;
+  border-top: 0;
+
+}
+.cart-user-info label{
+  width: 65px;
+  margin-top: 5px;
+  float: left;
+}
+.cart-user-info span{
+  float: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333333;
+  margin-top: 5px;
+}
+
+.cart-user-info .cart-consignee {
+  float: left;
+}
+.cart-user-info .cart-phone-num {
+	float: left;
+}
+.cart-user-info .cart-address {
+	float: left;
+}
+.cart-user-info .cart-address input {
+	width: 300px;
+}
+
+.cart-user-info input {
+	margin: 5px;
+}
+.save-button {
+  padding: 0;
+}

@@ -5,7 +5,12 @@ import tornado.ioloop
 import tornado.web
 
 from config import APP_HTTP_PORT, SETTINGS
-from takeaway.views.account import LoginHandler, LogoutHandler, SignupHandler
+from takeaway.views.account import (
+    AccountHandler, 
+    LoginHandler, 
+    LogoutHandler, 
+    SignupHandler
+)
 from takeaway.views.category import CategoryHandler
 from takeaway.views.cart import CartHandler, CartDetailHandler, CartCountHandler
 from takeaway.views.food import (
@@ -18,6 +23,7 @@ from takeaway.views.order import OrderHandler, OrderDetailHandler, OrderByUserHa
 from takeaway.views.upload import UploadHandler
 
 application = tornado.web.Application([
+    (r"/account", AccountHandler),
     (r"/login", LoginHandler),
     (r"/logout", LogoutHandler),
     (r"/signup", SignupHandler),
@@ -31,7 +37,7 @@ application = tornado.web.Application([
     (r"/carts/(\d+)", CartDetailHandler),
     (r"/carts/count", CartCountHandler),
     (r"/orders", OrderHandler),
-    (r"/ordres/(\d+)", OrderDetailHandler),
+    (r"/orders/(\d+)", OrderDetailHandler),
     (r"/users/(\d+)/orders", OrderByUserHandler),
     (r"/uploads", UploadHandler),
 ], **SETTINGS)

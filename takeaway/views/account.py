@@ -7,8 +7,21 @@ import datetime
 from tornado.web import HTTPError
 
 from .base import APIHandler
+from takeaway.config import DOMAIN
 from takeaway.models.user import UserDAO 
 from takeaway.models.form import LoginForm, SignupForm
+
+class AccountHandler(APIHandler):
+
+    def prepare(self):
+        super(AccountHandler, self).prepare()
+        if not self.current_user:
+            self.make_response()
+            return
+
+    def get(self):
+        self._data = self.current_user.to_dict()
+        self.make_response()
 
 class LoginHandler(APIHandler):
 
@@ -44,7 +57,10 @@ class LogoutHandler(APIHandler):
 
     def get(self):
         if self.current_user:
-            self.logout(self.current_user)
+            self.clear_cookie('S', domain=DOMAIN)
+            next_url = self.get_argument('next', "")
+            if next_url:
+                self.redirect(next_url)
             return
 
 class SignupHandler(APIHandler): 

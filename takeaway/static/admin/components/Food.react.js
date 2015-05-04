@@ -1,4 +1,5 @@
 var React = require('react');
+var CartActions = require('../actions/CartActions');
 
 var Food = React.createClass({
 	propTypes: {
@@ -9,19 +10,29 @@ var Food = React.createClass({
     	price: React.PropTypes.number,
     	cover: React.PropTypes.string,
     	records: React.PropTypes.number,
-    	created_at: React.PropTypes.string,
-    	updated_at: React.PropTypes.string
+    	createdAt: React.PropTypes.string
+	},
+
+	getInitialState: function(){
+		return {
+			amount: 0,
+		};
 	},
 
 	render: function() {
 		var food = this.props.data;
+		var amount = this.state.amount;
 		return (
 			<div className="food">
-				{food.id}/
-				{food.name}	/	
-				{food.price}/元		
-				{food.updated_at}/	
-				<img src={food.cover} alt="" />		
+				<div className="cover">
+					<img  src={food.cover} alt="" />
+				</div>
+				<div className="intro">
+					{food.name}	
+				</div>
+				<div className="sale-info"> 月销售{food.records} 份</div>	
+				<div className="price">¥{food.price}/份</div>
+
 			</div>
 		);
 	}

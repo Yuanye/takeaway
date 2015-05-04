@@ -13,7 +13,6 @@ $.ajaxSetup({
 var CHANGE_EVENT = 'change';
 
 function create(data) {
-	console.log(data);
 	return $.post(CART_URI, data, function(result) {
 		return result;
 	});

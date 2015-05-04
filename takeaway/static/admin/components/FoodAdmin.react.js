@@ -9,14 +9,13 @@ var FoodAdmin = React.createClass({
 
 	render: function() {
 		return (
-			<div >
+			<div className="col-sm-10">
 				<FoodForm onSave={this.onSave} />
 				<FoodList />
 			</div>
 		);
 	},
 	onSave: function(data) {
-		console.log(data);
 		FoodActions.create(data);
 	}
 

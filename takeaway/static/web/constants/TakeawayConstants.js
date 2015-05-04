@@ -1,6 +1,8 @@
 
 module.exports = {
   API_URI: "http://test.com/",
+  WEB_URI: "http://test.com/web/index.html",
+  ADMIN_URI: "http://test.com/admin/index.html",
   CATEGORY_CREATE: "CATEGORY_CREATE",
   CATEGORY_DELETE: "CATEGORY_DELETE",
   CATEGORY_GET: "CATEGORY_GET",
@@ -12,6 +14,7 @@ module.exports = {
   ORDER_CANCLE: "ORDER_CANCLE",
   ORDER_CONFIRM: "ORDER_CONFIRM",
   ORDER_CREATE: "ORDER_CREATE",
+  ORDER_UPDATE: "ORDER_UPDATE",
   ORDER_DELIVERY: "ORDER_DELIVERY",
   USER_SIGNUP: "USER_SIGNUP",
   USER_LOGIN: "USER_LOGIN",
