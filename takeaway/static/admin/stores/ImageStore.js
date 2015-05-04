@@ -61,7 +61,6 @@ var ImageStore = assign({}, EventEmitter.prototype, {
 
 ImageStore.dispatchToken = AppDispatcher.register(function(action) {
 	var data;
-	console.log(action.actionType, 'in Store dispatch')
 	switch (action.actionType) {
 		case TakeawayConstants.IMAGE_CREATE:
 			data = action.data;

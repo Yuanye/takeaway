@@ -30,7 +30,6 @@ function create(data) {
 
 function update(data) {
 	return $.post(ORDER_URI+"/"+data.id, data, function(result) {
-		console.log(data);
 		return result;
 	});
 }

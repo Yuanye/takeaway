@@ -13,8 +13,6 @@ $.ajaxSetup({
 var CHANGE_EVENT = 'change';
 
 function create(data) {
-	console.log("in food store");
-	console.log(data);
 	var formData = new FormData();
 	formData.append('name', data['name']);
 	formData.append('category_id', data['category_id']);
@@ -40,12 +38,6 @@ function getAll() {
 		data = result;
 	});
 	return data;
-}
-
-function update(data) {
-	return $.patch(FOOD_URI + "/" + data.id, data, function(result) {
-		return result;
-	});
 }
 
 function remove(data) {

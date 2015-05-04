@@ -13,7 +13,6 @@ $.ajaxSetup({
 var CHANGE_EVENT = 'change';
 
 function create(data) {
-	console.log(data);
 	$.ajax({
 		url: CATEGORY_URI, 
 	    type: 'POST',
@@ -33,12 +32,6 @@ function getAll() {
 		data = result;
 	});
 	return data;
-}
-
-function update(data) {
-	return $.patch(CATEGORY_URI + "/" + data.id, data, function(result) {
-		return result;
-	});
 }
 
 function remove(data) {
@@ -74,12 +67,6 @@ CategoryStore.dispatchToken = AppDispatcher.register(function(action) {
 
 			data = action.data;
 			create(data);
-			CategoryStore.emitChange();
-			break;
-
-		case TakeawayConstants.CATEGORY_UPDATE:
-			data = action.data;
-			update(data);
 			CategoryStore.emitChange();
 			break;
 

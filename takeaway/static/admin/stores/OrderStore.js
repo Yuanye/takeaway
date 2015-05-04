@@ -23,15 +23,21 @@ function getAll() {
 }
 
 function create(data) {
+
 	return $.post(ORDER_URI, data, function(result) {
 		return result;
 	});
 }
 
 function update(data) {
-	return $.post(ORDER_URI+"/"+data.id, data, function(result) {
-		console.log(data);
-		return result;
+	$.ajax({
+		url: ORDER_URI+"/"+data.id, 
+	    type: 'POST',
+	    data: JSON.stringify(data),
+	    contentType: 'application/json',
+	    processData: false,
+	    success: function(result){
+	    }
 	});
 }
 

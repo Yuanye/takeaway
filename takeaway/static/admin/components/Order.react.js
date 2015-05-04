@@ -2,6 +2,7 @@ var React = require('react');
 var OrderStateConstants = require('../constants/OrderStateConstants');
 var OrderActions = require('../actions/OrderActions');
 
+
 var Order = React.createClass({
 	getInitialState: function(){
 		return {
@@ -14,12 +15,25 @@ var Order = React.createClass({
 		this.setState({state: state})
 		OrderActions.update({"id":this.state.id, "state": state})
 	},
+	delivery: function(){
+		var state = 20
+		this.setState({state: state})
+		OrderActions.update({"id":this.state.id, "state": state})
+	},
+	finish: function(){
+		var state = 40
+		this.setState({state: state})
+		OrderActions.update({"id":this.state.id, "state": state})
+	},
 
 	render: function() {
 		var CancleStyle = {display: "none"};
-		console.log(this.state.state);
+		var DeliveryStyle = {display: "none"};
+		var FinishStyle = {display: "none"};
 		if (this.state.state == 10) {
-			CancleStyle = {}
+			DeliveryStyle = {}; 
+		} else if (this.state.state == 20){
+			FinishStyle = {}; 
 		};
 		return (
 			<div className="order">
@@ -44,6 +58,8 @@ var Order = React.createClass({
 							状&emsp;&emsp;态: <span className="order_detail_msg">{OrderStateConstants[this.state.state]}</span>
 
 							<button style={CancleStyle} onClick={this.cancle}>取消</button>
+							<button style={DeliveryStyle} onClick={this.delivery}>配送</button>
+							<button style={FinishStyle} onClick={this.finish}>完成</button>
 						</div>
 					</div>
 				</div>
